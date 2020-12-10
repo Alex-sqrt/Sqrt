@@ -33,7 +33,6 @@ module Sqrt2_TB;
 	wire [14:0] Out;
 	integer fd, temp;
       
-
 	// Instantiate the Unit Under Test (UUT)
 	Sqrt2 uut (
 		.In(In), 
