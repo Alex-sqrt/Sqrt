@@ -9,7 +9,7 @@ read_hdl -v2001 ../Source/Sqrt2.v
 ## Compile our code (create a technology-independent schematic)
 elaborate -parameters $PARAMS $DESIGN
 ## Setup design constraints
-read_sdc ../Source/Synthesis/Sqrt2.sdc
+read_sdc ../Source/Sqrt2.sdc
 ## Synthesize our schematic (create a technology-dependent schematic)
 #synthesize -to_generic
 synthesize -to_mapped
