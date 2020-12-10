@@ -27,6 +27,7 @@ module Sqrt2_TB;
 	// Inputs
 	reg [14:0] In;
         reg clk;
+	reg clk1; //регистр для считывания данных из файла
         reg reset;
 	// Outputs
 	wire [14:0] Out;
@@ -40,21 +41,24 @@ module Sqrt2_TB;
 	.clk(clk),.reset(reset));
 
 	initial begin
+	clk1 = 1'b0;
 	clk = 1'b0;
 	reset = 1'b0;
 	fd = $fopen("In.dat", "r");
 		//#33 reset=1'b0;
 	end
 
-	always @(posedge clk)
+	always @(posedge clk1)
 	begin
 	if (!$feof(fd))
 		temp = $fscanf(fd, "%h", In);
 		//$display ("%h, Out);
 	end
 
-	always 
-	#5 clk =~clk;
+	always begin
+	#5 clk1 = ~clk1;
+	#2 clk =~clk;
+	end
 
   
 endmodule
