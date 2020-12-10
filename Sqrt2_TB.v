@@ -45,6 +45,7 @@ module Sqrt2_TB;
 	reset = 1'b0;
 	fd = $fopen("In.dat", "r");
 		//#33 reset=1'b0;
+	In = 15'b0;
 	end
 
 	always @(posedge clk1)
